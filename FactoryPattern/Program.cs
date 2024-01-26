@@ -1,10 +1,14 @@
-﻿namespace FactoryPattern
+﻿namespace FactoryPatternVehicle
 {
-    public class Program
+    internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine("Enter the number of tires:");
+            int tireCount = int.Parse(Console.ReadLine());
+
+            IVehicle vehicle = VehicleFactory.GetVehicle(tireCount);
+            vehicle.Drive();
         }
     }
 }
